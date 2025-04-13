@@ -11,7 +11,7 @@ export default async function handler(req, res) {
       try {
         const data = req.body;
   
-        const webhookUrl = "https://discord.com/api/webhooks/YOUR_WEBHOOK_URL"; // ersetzen!
+        const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
   
         const discordPayload = {
           content: `📅 Neue Buchung:
