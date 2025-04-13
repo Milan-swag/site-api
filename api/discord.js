@@ -14,12 +14,7 @@ export default async function handler(req, res) {
       const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
 
       const discordPayload = {
-        content: `📅 Neue Buchung:
-• 📆 Datum: ${data.date}
-• ⏰ Zeit: ${data.time}
-• 🏠 Adresse: ${data.street}
-• 📞 Telefon: ${data.phone}
-• 🛒 Typ: ${data.type || "Nicht angegeben"}`
+        content: `📧 Glückwunsch Milan! Eine neue Buchung für ${data.type || "Nicht angegeben"} ist soeben eingetroffen!\n\n——————————\n\n • 🛒 Typ: ${data.type || "Nicht angegeben"}\n • 📆 Datum: ${data.date}\n • ⏰ Zeit: ${data.time}\n • 🏠 Adresse: ${data.street}\n • 📞 Telefon: ${data.phone}`
       };
 
       const response = await fetch(webhookUrl, {
