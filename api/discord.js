@@ -14,7 +14,7 @@ export default async function handler(req, res) {
       const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
 
       const discordPayload = {
-        content: `📧 Glückwunsch Milan! Du hast eine neue Bestellung für ${data.type || "Nicht angegeben"} von deinem Store erhalten!\n——————————\n🛒 Typ: ${data.type || "Nicht angegeben"}\n📆 Datum: ${data.date}\n⏰ Zeit: ${data.time}\n👤 Name: ${data.name}\n📧 Email: ${data.email}\n🏠 Adresse: ${data.street}\n📞 Telefon: ${data.phone}`
+        content: `📧 Glückwunsch Milan! Du hast eine neue Bestellung für ${data.type || "Nicht angegeben"} von deinem Store erhalten!\n——————————\n🛒 Typ: ${data.type || "Nicht angegeben"}\n📆 Datum: ${data.date}\n⏰ Zeit: ${data.time}\n👤 Name: ${data.name}\n📧 Email: ${data.email}\n🏠 Adresse: ${data.street}\n📞 Telefon: ${data.phone}\n@everyone`
       };
 
       const response = await fetch(webhookUrl, {
